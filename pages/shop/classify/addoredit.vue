@@ -5,8 +5,8 @@
       <uni-forms-item name="sort" label="排序" required>
         <uni-easyinput placeholder="类别排序，越大越靠后" type="number" v-model="formData.sort" />
       </uni-forms-item>
-      <uni-forms-item name="classify_id" label="导航名称" required>
-        <uni-easyinput placeholder="导航名称"  v-model="formData.classify_id" />
+      <uni-forms-item name="classify_name" label="导航名称" required>
+        <uni-easyinput placeholder="导航名称"  v-model="formData.classify_name" />
       </uni-forms-item>
       <uni-forms-item name="img_url" label="图片地址" required>
         <uni-file-picker file-mediatype='image' limit='1' v-model='imageValue' @success="success" />
@@ -35,7 +35,7 @@ const dbCollectionName = 'classify';
 export default {
   data() {
     let formData = {
-      "classify_id":'',
+      "classify_name":'',
       "img_url": '',
       "sort": null,
       "status":false,

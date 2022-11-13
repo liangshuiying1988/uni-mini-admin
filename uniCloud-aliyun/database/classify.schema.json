@@ -1,9 +1,6 @@
 {
 	"bsonType": "object",
-	"required": [
-		"classify_name",
-		"img_url"
-	],
+	"required": ["classify_name", "img_url"],
 	"permission": {
 		"read": true
 	},
@@ -16,7 +13,7 @@
 			"description": "图片地址",
 			"title": "图片地址",
 			"format": "url",
-			"pattern": "^(http://|https://|/|./|@/)\\S",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
 			"trim": "both"
 		},
 		"open_url": {
@@ -24,7 +21,7 @@
 			"description": "点击跳转目标地址。如果是web地址则使用内置web-view打开；如果是本地页面则跳转本地页面；如果是schema地址则打开本地的app",
 			"title": "点击目标地址",
 			"format": "url",
-			"pattern": "^(http://|https://|/|./|@/)\\S",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
 			"trim": "both"
 		},
 		"classify_name": {

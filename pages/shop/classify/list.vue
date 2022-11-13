@@ -22,7 +22,7 @@
 					</uni-tr>
 					<uni-tr v-for="(item,index) in data" :key="index">
 						<uni-td align="center">{{item.sort}}</uni-td>
-						<uni-td align="center">{{item.classify_id}}</uni-td>
+						<uni-td align="center">{{item.classify_name}}</uni-td>
 						<uni-td align="center">
 							<image :src="item.img_url" class="img_style"/>
 						</uni-td>
