@@ -1,6 +1,7 @@
 import app from './modules/app.js'
 import error from './modules/error.js'
 import user from './modules/user.js'
+import goods from './modules/goods.js'
 
 // const modulesFiles = require.context('./modules', true, /\.js$/)
 // const modules = modulesFiles.keys().reduce((modules, modulePath) => {
@@ -18,7 +19,8 @@ const store = new Vuex.Store({
 	modules: {
 		app,
 		error,
-		user
+		user,
+		goods
 	}
 })
 // #endif
@@ -32,7 +34,8 @@ const store = createStore({
 	modules: {
 		app,
 		error,
-		user
+		user,
+		goods
 	}
 })
 // #endif

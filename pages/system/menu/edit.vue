@@ -21,7 +21,7 @@
 				<uni-easyinput v-model="formData.sort" :clearable="false" placeholder="请输入菜单序号（越大越靠后）" />
 			</uni-forms-item>
 			<uni-forms-item name="parent_id" label="父菜单标识">
-				<uni-easyinput v-model="formData.parent_id" :clearable="false" placeholder="请输入父级菜单标识, 一级菜单不需要填写" />
+				<uni-easyinput :disabled="true" v-model="formData.parent_id" :clearable="false" placeholder="请输入父级菜单标识, 一级菜单不需要填写" />
 			</uni-forms-item>
 			<uni-forms-item name="permission" label="权限列表" class="flex-center-x">
 				<uni-data-checkbox :multiple="true" v-model="formData.permission" collection="uni-id-permissions" :page-size="500" field="permission_name as text, permission_id as value" />
