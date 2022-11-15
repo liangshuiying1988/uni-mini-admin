@@ -89,7 +89,7 @@ export default {
     getList() {
       //从store里面取值
       let list = this.store.state.goods.list;
-      console.log('store=====list=======',list)
+      // console.log('store=====list=======',list)
       if (list && list.length > 0) {
         this.range = list;
       } else {
@@ -101,11 +101,12 @@ export default {
     },
     success(e) {
       this.formData.icon = e.tempFilePaths[0]
+      console.log('this==========',e)
     },
     onnodeclick(e) {
       this.formData.parent_id = e.value;
       this.selVal = e.value;
-      console.log('selVal===========',e.value)
+      // console.log('selVal===========',e.value)
     },
     /**
      * 验证表单并提交
@@ -127,12 +128,13 @@ export default {
      */
     submitForm(value) {
       // 使用 clientDB 提交数据
-      console.log('value===========', value)
+      console.log('this.formData===========',value, this.formData)
      
-      console.log('store============',this.store)
+      // console.log('store============',this.store)
       //编辑
       if (this.formDataId) {
-        return db.collection(dbCollectionName).doc(this.formDataId).update(value).then((res) => {
+        return db.collection(dbCollectionName).doc(this.formDataId)
+          .update({ ...value, icon: this.formData.icon }).then((res) => {
           uni.showToast({
             icon: 'none',
             title: '修改成功'
@@ -176,8 +178,12 @@ export default {
       db.collection(dbCollectionName).doc(id).field("parent_id,name,icon,sort,is_first").get().then((res) => {
         const data = res.result.data[0]
         if (data) {
-          this.formData = data
-          this.imageValue.push(data.icon)
+          this.formData = data;
+          if (data.icon) {
+            this.imageValue = [{
+            "url":data.icon
+          }]
+          }
           this.selVal = data.parent_id
         }
       }).catch((err) => {
