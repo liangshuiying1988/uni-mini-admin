@@ -1,12 +1,6 @@
 {
 	"bsonType": "object",
-	"required": [
-		"goods_sku",
-		"category_id",
-		"name",
-		"is_on_sale",
-		"is_hot"
-	],
+	"required": ["goods_sku", "category_id", "name", "is_on_sale", "is_hot"],
 	"permission": {
 		"read": "doc.is_on_sale == true",
 		"create": false,
@@ -44,7 +38,7 @@
 			"bsonType": "string",
 			"description": "商品缩略图，用于在列表或搜索结果中预览显示",
 			"title": "缩略图地址",
-			"pattern": "^(http://|https://|/|./|@/)\\S",
+			"pattern": "^(http:\/\/|https:\/\/|\/|.\/|@\/)\\S",
 			"trim": "both"
 		},
 		"goods_banner_imgs": {

@@ -1,8 +1,6 @@
 {
 	"bsonType": "object",
-	"required": [
-		"img_url"
-	],
+	"required": ["img_url"],
 	"permission": {
 		"read": true
 	},
