@@ -30,7 +30,7 @@
 
 <script>
 import { useStore } from 'vuex';
-
+import { changeArray } from '@/utils/util.js'
 const db = uniCloud.database();
 const dbCollectionName = 'goods-category';
 
@@ -67,24 +67,7 @@ export default {
   },
   methods: {
     handleLoad(data) {
-      // 将分类数组转成3维数组
-      data.forEach((item) => {
-        // 所有数据统一加children、value、text
-        item.children = [];
-        item.value = item._id;
-        item.text = item.name;
-      })
-
-      data.forEach((item) => {
-        data.forEach((item2) => {
-          if (item2.parent_id === item._id) {
-            item.children.push(item2)
-          }
-        })
-      })
-      
-      let res = data.filter(i => i.parent_id === '');
-      this.range = res;
+      this.range = changeArray(data);
     },
     getList() {
       //从store里面取值

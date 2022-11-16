@@ -1,3 +1,5 @@
+import { changeArray } from '@/utils/util.js'
+
 export default {
   namespaced: true,
   state: {
@@ -5,24 +7,7 @@ export default {
   },
   mutations: {
     changeList(state, data) {
-      data.forEach((item) => {
-        // 所有数据统一加children、value、text
-        item.children = [];
-        item.value = item._id;
-        item.text = item.name;
-      })
-
-      data.forEach((item) => {
-        data.forEach((item2) => {
-          if (item2.parent_id === item._id) {
-            item.children.push(item2)
-          }
-        })
-      })
-
-      let res = data.filter(i => i.parent_id === '');
-
-      state.list = res
+      state.list = changeArray(data)
     },
     clearList(state) {
       state.list = []

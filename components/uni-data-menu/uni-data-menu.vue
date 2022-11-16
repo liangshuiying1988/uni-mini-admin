@@ -3,7 +3,6 @@
 		<uni-nav-menu :active="value" activeKey="value" :activeTextColor="activeTextColor" :uniqueOpened="uniqueOpened"
 			@select="onSelect">
 			<uni-menu-sidebar :data="userMenu"></uni-menu-sidebar>
-			<uni-menu-sidebar :data="staticMenu"></uni-menu-sidebar>
 		</uni-nav-menu>
 	</view>
 </template>
@@ -40,12 +39,6 @@
 			uniqueOpened: {
 				type: Boolean,
 				default: false
-			},
-			staticMenu: {
-				type: Array,
-				default () {
-					return []
-				}
 			}
 		},
 		watch: {

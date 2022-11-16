@@ -200,6 +200,18 @@
           "style": {
             "navigationBarTitleText": "新增/编辑商品分类"
           }
+        },
+        {
+          "path": "goods/list",
+          "style": {
+            "navigationBarTitleText": "商品管理"
+          }
+        },
+        {
+          "path": "goods/addoredit",
+          "style": {
+            "navigationBarTitleText": "新增/编辑商品"
+          }
         }
       ]
     },
